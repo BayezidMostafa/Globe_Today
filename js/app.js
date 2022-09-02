@@ -18,4 +18,19 @@ const displayCatagory = categories => {
 }
 
 
+const gettingCategoryDetails = categoryId => {
+    const url = `https://openapi.programming-hero.com/api/news/category/0${categoryId}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => console.log(data.data[0]))
+}
+
+const displayCategoryNews = newses => {
+    const newsContainer = document.getElementById('news-container');
+    newses.forEach(news => {
+        const newsDiv = document.createElement('div');
+        newsDiv.classList.add('col')
+    })
+}
+
 loadCategory()
