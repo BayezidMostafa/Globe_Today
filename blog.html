@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F&Q BLOG</title>
+    <!-- BOOTSTRAP CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- FontAwesome CDN -->
+    <script src="https://kit.fontawesome.com/2c77fe8ece.js" crossorigin="anonymous"></script>
+
+    <style>
+        .custom-shadow {
+            box-shadow: 2px 2px 10px 2px rgb(177, 177, 177);
+        }
+    </style>
+
+</head>
+
+<body class="bg-dark">
+    <header class="container my-2">
+        <div class="text-center text-white bg-light p-3 rounded mb-5">
+
+            <!-- Navigation Bar Start -->
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div>
+                        <a class="navbar-brand border px-3 rounded bg-dark text-light fw-semibold" href="#">VIRAL</a>
+                        <a class="navbar-brand fw-semibold" href="">PORTAL</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdownD" aria-controls="navbarNavDropdownD" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdownD">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">NEWS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="blog.html">BLOG</a>
+                            </li>
+                        </ul>
+                        <a href="#"><img class="img-fluid rounded-circle ms-4" src="images/main-profile.jpg" alt=""></a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navigation Bar End -->
+        </div>
+        <div>
+            <div class="card border-dark mb-3 custom-shadow">
+                <div class="card-header">QUESTION-1</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">WHAT IS THE DIFFERENCE BETWEEN VAR/LET/CONST?</h5>
+                    <p class="card-text"><span class="fw-bold">VAR: </span>Var is global-scoped or functional-scoped.
+                        This variable can be declared and access without initialization. We can update and re-declared
+                        this variable into the scope.</p>
+                    <p class="card-text"><span class="fw-bold">LET: </span>Let is a block-scoped variable. We can
+                        declare this variable without initialization. We can not re-declare this variable but we can
+                        re-assigned it.</p>
+                    <p class="card-text"><span class="fw-bold">CONST: </span>Const is a block-scoped variable. This
+                        variable can't be decalred without initialization. We can't update or de-declared this variable
+                        into the scope.</p>
+                </div>
+            </div>
+            <div class="card border-dark mb-3 custom-shadow">
+                <div class="card-header">QUESTION-2</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">WHAT IS THE DIFFERENCE BETWEEN ARROW AND RAGULAR FUNCTION?</h5>
+                    <p class="card-text">The most common difference between arrow and regular function is syntax. We can
+                        get the same result as regular function within few lines of code. Arrow functions don't have
+                        their own 'this' or 'arguments' binding like regular functions. Regular functions have arguments
+                        objects but, in arrow functions haven't.</p>
+                </div>
+            </div>
+            <div class="card border-dark mb-3 custom-shadow">
+                <div class="card-header">QUESTION-3</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">WHAT IS THE DIFFERENCE BETWEEN MAP(), FOREACH(), FILTER(), ADN FIND()?</h5>
+                    <p class="card-text"><span class="fw-bold">map():</span> The map() method create a new array with the result of calling a function for every array element. The map() will not change the original array.</p>
+                    <p class="card-text"><span class="fw-bold">forEach():</span> The forEach() method is used to loop through the contents of an array and show each element as output. The forEach() method will not execute for empty elements</p>
+                    <p class="card-text"><span class="fw-bold">filter():</span> The filter() method creates a new array filled with elements that pass a specific test provided by a function. The filter() method does not execute the function for empty elements.</p>
+                    <p class="card-text"><span class="fw-bold">find():</span> The find() method returns the value of the first array element that pass the provided test provided by a function. If no values pass the test, undefined is returned.</p>
+
+                </div>
+            </div>
+            <div class="card border-dark mb-3 custom-shadow">
+                <div class="card-header">QUESTION-4</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">WHY WE SHOULD USE TEMPLATE STRING?</h5>
+                    <p class="card-text">By using template literals(``), We can use both single quote('') and double quote to define a string. We can declare multiline string in it. Template literals allow us to use variables in string. It helps us to create clean JavaScript code when we have to requesting an API.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- JS SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
