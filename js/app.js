@@ -16,7 +16,7 @@ const displayCatagory = categories => {
             <a onclick="gettingCategoryDetails(${category.category_id})" class="nav-link active" aria-current="page" href="#">${category.category_name}</a>
         </li>
         `;
-        containerCategory.appendChild(categoryUl);   
+        containerCategory.appendChild(categoryUl);
     });
 }
 
@@ -26,43 +26,39 @@ const gettingCategoryDetails = categoryId => {
     fetch(url)
         .then(res => res.json())
         .then(data => displayCategoryNews(data.data))
-        toggleingSpinner(true)
+    toggleingSpinner(true)
 }
 
 const displayCategoryNews = newses => {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = ``;
     newses.forEach(news => {
-        console.log(news)
+        // console.log(news)
         const newsDiv = document.createElement('div');
-        newsDiv.classList.add('card')
-        newsDiv.classList.add('mb-5')
+        newsDiv.classList.add('col');
         newsDiv.innerHTML = `
-        <div class="row g-0 d-flex align-items-center p-4">
-            <div class="col-sm-12 col-md-2">
-                <img class="img-fluid" src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-10">
-                <div class="card-body">
-                    <h5 class="card-title">${news.title}</h5>
-                    <p class="card-text">${news.details.slice(0, 500)}...</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex">
-                            <div>
-                                <img style="width: 50px;" class="img-fluid rounded-circle" src="${news.author.img}">
-                            </div>
-                            <div class="ms-3">
-                                <p class="m-0">${news.author.name}</p>
-                                <p class="m-0">${news.author.published_date}</p>
-                            </div>
+        <div class="card">
+                <img src="${news.thumbnail_url}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${news.title}</h5>
+                <p class="card-text">${news.details.slice(0, 500)}...</p>
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                        <img style="width: 50px;" class="img-fluid rounded-circle" src="${news.author.img}">
+                        <div class="ms-2">
+                            <p class="m-0">${news.author.name}</p>
+                            <p class="m-0">${news.author.published_date}</p>
                         </div>
+                    </div>
+                    <div>
                         <div class="d-flex">
                             <div class="me-2"><i class="fa-solid fa-eye"></i></i></div>
                             <div><p>${news.total_view}</p></div>
                         </div>
+                    </div>
                         <div class="d-flex">
                             <div class="me-2">
-                                <p>${news.rating.number}</p>
+                                <p>${news.rating.number ? news.rating.number : 'Rating Not Found'}</p>
                             </div>
                             <div>
                                 <i class="fa-solid fa-star"></i>
@@ -72,17 +68,23 @@ const displayCategoryNews = newses => {
                                 <i class="fa-regular fa-star"></i>
                             </div>
                         </div>
-                        <div>
-                            <button onclick="newsDetailsInfo('${news._id}')" class="border-0 bg-transparent" type="button" data-bs-toggle="modal" data-bs-target="#newsDetails"><i
-                                    class="fa-solid fa-arrow-right"></i></button>
-                        </div>
-                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button onclick="newsDetailsInfo('${news._id}')" class="btn btn-dark w-100"  data-bs-toggle="modal" data-bs-target="#newsDetails">Read More</button>
                 </div>
             </div>
         </div>
         `;
         newsContainer.appendChild(newsDiv);
-        
+        // For News Count
+        const lengthOfNews = newsContainer.childNodes.length;
+        const newsCounter = document.getElementById('counter');
+        if (lengthOfNews !== 0) {
+            newsCounter.innerText = lengthOfNews;
+        }
+        else {
+            newsContainer.innerText = 0;
+        }
     })
     toggleingSpinner(false)
 }
@@ -92,8 +94,8 @@ const displayCategoryNews = newses => {
 const newsDetailsInfo = info => {
     const url = `https://openapi.programming-hero.com/api/news/${info}`;
     fetch(url)
-    .then(res => res.json())
-    .then(data => displayNewsDetails(data.data[0]))
+        .then(res => res.json())
+        .then(data => displayNewsDetails(data.data[0]))
 }
 
 const displayNewsDetails = news => {
@@ -106,10 +108,10 @@ const displayNewsDetails = news => {
 
 const toggleingSpinner = isLoading => {
     const loadingScene = document.getElementById('loader-scene');
-    if(isLoading){
+    if (isLoading) {
         loadingScene.classList.remove('d-none')
     }
-    else{
+    else {
         loadingScene.classList.add('d-none')
     }
 }

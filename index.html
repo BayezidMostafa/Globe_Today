@@ -14,10 +14,14 @@
 </head>
 
 <body>
+
     <!-- Header Start -->
+
     <header>
         <section class="container my-4">
+
             <!-- Navigation Bar Start -->
+
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <div>
@@ -42,8 +46,11 @@
                     </div>
                 </div>
             </nav>
+
             <!-- Navigation Bar End -->
+
         </section>
+        
         <hr class="container">
 
         <!-- Category container -->
@@ -71,7 +78,7 @@
 
         <section id="items-counter" class="container py-4">
             <div class="bg-dark fs-5 text-light rounded py-2">
-                <p class="ps-3 m-0">items found for category</p>
+                <p class="ps-3 m-0"><span id="counter"></span> items found in this category</span></p>
             </div>
         </section>
 
@@ -93,7 +100,9 @@
 
         <!-- News Container -->
 
-        <section id="news-container" class="container my-5">
+        <section class="container my-5">
+            <div id="news-container" class="row row-cols-1 row-cols-md-2 g-4">
+            </div>
         </section>
 
         <!-- Spinner -->
