@@ -15,6 +15,7 @@ const displayCatagory = categories => {
         `;
         categoriesContainer.appendChild(catDiv);
     });
+    // Start Spinner 
 }
 
 
@@ -23,6 +24,7 @@ const gettingCategoryDetails = categoryId => {
     fetch(url)
         .then(res => res.json())
         .then(data => displayCategoryNews(data.data))
+        toggleingSpinner(true)
 }
 
 const displayCategoryNews = newses => {
@@ -35,10 +37,10 @@ const displayCategoryNews = newses => {
         newsDiv.classList.add('mb-5')
         newsDiv.innerHTML = `
         <div class="row g-0 d-flex align-items-center p-4">
-            <div class="col-md-4">
+            <div class=" col-md-2">
                 <img class="img-fluid" src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card-body">
                     <h5 class="card-title">${news.title}</h5>
                     <p class="card-text">${news.details.slice(0, 600)}</p>
@@ -54,7 +56,7 @@ const displayCategoryNews = newses => {
                         </div>
                         <div class="d-flex">
                             <div class="me-2"><i class="fa-solid fa-eye"></i></i></div>
-                            <div><p class="">${news.total_view}</p></div>
+                            <div><p>${news.total_view}</p></div>
                         </div>
                         <div class="d-flex">
                             <i class="fa-solid fa-star"></i>
@@ -73,7 +75,20 @@ const displayCategoryNews = newses => {
         </div>
         `;
         newsContainer.appendChild(newsDiv);
+        
     })
+    toggleingSpinner(false)
 }
+
+const toggleingSpinner = isLoading => {
+    const loadingScene = document.getElementById('loader-scene');
+    if(isLoading){
+        loadingScene.classList.remove('d-none')
+    }
+    else{
+        loadingScene.classList.add('d-none')
+    }
+}
+
 
 loadCategory()
