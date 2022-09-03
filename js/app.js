@@ -43,13 +43,17 @@ const displayCategoryNews = newses => {
                     <h5 class="card-title">${news.title}</h5>
                     <p class="card-text">${news.details.slice(0, 600)}</p>
                     <div class="d-flex justify-content-between align-content-center">
-                        <div><img style="width: 50px;" class="img-fluid rounded-circle" src="${news.author.img}"></div>
-                        <div>
-                            <p class="m-0">${news.author.name}</p>
-                            <p class="m-0">${news.author.published_date}</p>
+                        <div class="d-flex">
+                            <div>
+                                <img style="width: 50px;" class="img-fluid rounded-circle" src="${news.author.img}">
+                            </div>
+                            <div class="ms-3">
+                                <p class="m-0">${news.author.name}</p>
+                                <p class="m-0">${news.author.published_date}</p>
+                            </div>
                         </div>
                         <div class="d-flex">
-                            <div class="me-2"><i class="fa-regular fa-star"></i></div>
+                            <div class="me-2"><i class="fa-solid fa-eye"></i></i></div>
                             <div><p class="">${news.total_view}</p></div>
                         </div>
                         <div class="d-flex">
