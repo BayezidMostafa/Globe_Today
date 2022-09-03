@@ -34,14 +34,8 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">NEWS</a>
                             </li>
-                            <li class="nav-item dropdown ms-4">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">BLOG</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">BLOG-1</a></li>
-                                    <li><a class="dropdown-item" href="#">BLOG-2</a></li>
-                                    <li><a class="dropdown-item" href="#">BLOG-3</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">BLOG</a>
                             </li>
                         </ul>
                         <a href="#"><img class="img-fluid rounded-circle ms-4" src="images/main-profile.jpg" alt=""></a>
@@ -51,17 +45,38 @@
             <!-- Navigation Bar End -->
         </section>
         <hr class="container">
-        <section id="category-container" class="container d-flex justify-content-evenly">
+
+        <!-- Category container -->
+
+        <section class="container">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown2" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown2">
+                        <ul id="container-catagory" class="navbar-nav">
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </section>
     </header>
     <main>
+
         <!-- Items Counter Start -->
+
         <section id="items-counter" class="container py-4">
             <div class="bg-dark fs-5 text-light rounded py-2">
                 <p class="ps-3 m-0">items found for category</p>
             </div>
         </section>
+
         <!-- Content Shotner -->
+
         <section class="container d-flex justify-content-between">
             <div class="d-flex">
                 <p class="fs-5 m-0">Sort By View:</p>
@@ -75,22 +90,51 @@
                 <button class="btn btn-light">Trending</button>
             </div>
         </section>
-        <section id="news-container" class="container my-5">
 
+        <!-- News Container -->
+
+        <section id="news-container" class="container my-5">
         </section>
+
         <!-- Spinner -->
+
         <section id="loader-scene" class="d-none">
             <div style="height: 200px;" class="d-flex justify-content-center align-items-center mt-0">
                 <div class="spinner-border" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-              </div>
+            </div>
+        </section>
+
+        <!-- Modal Satrt -->
+
+        <section>
+
+            <!-- Modal -->
+
+            <div class="modal fade modal-xl" id="newsDetails" tabindex="-1" aria-labelledby="newsDetailsLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div id="modal-body-info" class="modal-body d-flex justify-content-center"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
     <!-- Footer Start -->
+
     <footer class="text-center">
         <p class="text-light bg-dark py-5 mb-0">Copyright 2021 VIRAL PORTAL</p>
     </footer>
+
+
+
     <!-- JS SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
